@@ -1,6 +1,7 @@
 import React, { Component, COmponent } from "react";
 import axios from 'axios';
 import Global from "../Global";
+import { Link } from "react-router-dom";
 import Moment from 'react-moment';
 import 'moment/locale/es';
 
@@ -14,7 +15,44 @@ class Articles extends Component {
     };
 
     componentDidMount() {
-        this.getArticles();
+        var home = this.props.home;
+        var search = this.props.search;
+
+        if (home == 'true') {
+            this.getLastArticles();
+        } else if (search && search != null && search != undefined) {
+            this.getArticlesBySearch(search);
+        } else {
+            this.getArticles();
+        }
+    }
+
+    getLastArticles = () => {
+        console.log("Method getArticles Executed");
+        axios.get(this.url + "articles/last")
+            .then(res => {
+                this.setState({
+                    articles: res.data.articles,
+                    status: 'success'
+                });
+            })
+    }
+
+    getArticlesBySearch = (searched) => {
+        console.log("Method getArticles Executed");
+        axios.get(this.url + "search/"+searched)
+            .then(res => {
+
+                    this.setState({
+                    articles: res.data.articles,
+                    status: 'success'
+                });
+            }).catch(err => {
+                this.setState({
+                    articles : [],
+                    status : 'success'
+                })
+            })
     }
 
     getArticles = () => {
@@ -25,7 +63,6 @@ class Articles extends Component {
                     articles: res.data.articles,
                     status: 'success'
                 });
-                console.log(this.state);
             })
     }
 
@@ -57,7 +94,7 @@ class Articles extends Component {
                         </Moment>
 
                     </span>
-                    <a href="#">Leer más</a>
+                    <Link to={'blog/articulo/'+article._id}>Leer más</Link>
 
                     <div className="clearfix"></div>
                 </article>

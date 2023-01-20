@@ -3,31 +3,33 @@ import Slider from "./Slider";
 import Sidebar from "./Sidebar";
 import Articles from "./Articles";
 
-class Home extends Component {
+class Search extends Component {
+
+
     render() {
+        var searched = this.props.match.params.search;
         var buttonString = "Ver mas";
         return (
 
-            <div id="home">
-                <Slider btn={buttonString} testprops="Esto es otra prueba" 
-                title="Bienvenido al Curso de React JS realizado por Javier Aravena" 
-                size="slider-big"
+            <div id="blog">
+                <Slider title={'Busqueda:'+searched }
+                    size="slider-small"
                 />
 
                 <div className="center">
                     <div id="content">
-                        <h1 className="subheader">Ultimos Articulos !!</h1>
+                        {/*Listado de articulos que vendran de la API*/}
                         <Articles
-                        home="true"
+                        search={searched}
                         />
                     </div>
 
-                    <Sidebar />
+                    <Sidebar blog="true" />
                 </div>
-                
+
             </div>
         );
     }
 }
 
-export default Home;
+export default Search;
