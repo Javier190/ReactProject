@@ -11,6 +11,7 @@ import Home from "./components/Home";
 import Blog from "./components/Blog";
 import Formulario from "./components/Formulario";
 import Search from "./components/Search";
+import Calculator from "./components/Calculator";
 
 class Router extends Component {
     render() {
@@ -43,7 +44,7 @@ class Router extends Component {
 
 
                     <Route exact path="/segunda-ruta" component={MiComponente} />
-
+                    <Route exact path="/calculadora" component={Calculator} />
                     <Route exact path="/pruebas/:id/:nombre/:apellido?" render={(props) => {
 
                         var id = props.match.params.id;

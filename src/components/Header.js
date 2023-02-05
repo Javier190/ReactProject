@@ -9,7 +9,7 @@ class Header extends Component {
         return (
             <header id="header">
                 <div className="center">
-                    
+
                     <div id="logo">
                         <img src={logo} className="app-logo" alt="Logotipo" />
                         <span id="brand">
@@ -29,15 +29,18 @@ class Header extends Component {
                                 <NavLink activeClassName="active-menu" to="/formulario">Formulario</NavLink>
                             </li>
                             <li>
-                            <NavLink activeClassName="active-menu" to="/peliculas">Peliculas</NavLink>
+                                <NavLink activeClassName="active-menu" to="/peliculas">Peliculas</NavLink>
                             </li>
                             <li>
-                            <NavLink activeClassName="active-menu" to="/pruebas/321/Dwights/Schrutte">Pagina 2</NavLink>
+                                <NavLink activeClassName="active-menu" to="/pruebas/321/Dwight/Schrutte">API</NavLink>
+                            </li>
+                            <li>
+                                <NavLink activeClassName="active-menu" to="/calculadora">Calculadora</NavLink>
                             </li>
                         </ul>
                     </nav>
 
-                
+
                     <div className="clearfix"></div>
                 </div>
             </header>
