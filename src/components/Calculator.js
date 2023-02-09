@@ -6,6 +6,7 @@ function Calculator() {
 
     //Hook useState. to Show everything pressed. Maybe add some validations. Cambiar estilos ? css ?
     //usar otros hooks ? usar este como exp pero tiene que ser un ticket como realista
+    //simple modification for git
     const [input, setInput] = useState("");
     const calBtns = [];
 
@@ -37,6 +38,10 @@ function Calculator() {
     /*This is another option instead of anonymus method */
     function plus (e) {
         setInput(input + e.target.value)
+    }
+
+    function abstr (e) {
+        setInput(input - e.target.value)
     }
 
     return (
