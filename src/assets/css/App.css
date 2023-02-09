@@ -473,11 +473,13 @@ button {
 .subgrid {
   display: grid;
 }
+
+/*Organizando Calculadora */
 .wrapper {
   grid-template-areas:
-    "total total total total"
-    "modif modif modif oper"
-    "digit digit digit oper"
+    "total total total total"   /*input*/
+    "modif modif modif oper"    /*funciones*/
+    "digit digit digit oper"    /*digitos*/
     "digit digit digit oper"
     "digit digit digit oper"
     "digit digit digit oper";

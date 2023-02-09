@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Slider from "./Slider";
 import Sidebar from "./Sidebar";
 import Articles from "./Articles";
+import PortafolioHome from "./PortafolioHome";
 
 class Home extends Component {
     render() {
@@ -10,9 +11,10 @@ class Home extends Component {
 
             <div id="home">
                 <Slider btn={buttonString} testprops="Esto es otra prueba" 
-                title="Bienvenido al Curso de React JS realizado por Javier Aravena" 
+                title="Portafolio ReactJS de Javier Aravena" 
                 size="slider-big"
                 />
+                <PortafolioHome/>
 
                 <div className="center">
                     <div id="content">
