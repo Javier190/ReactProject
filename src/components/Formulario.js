@@ -59,7 +59,7 @@ class Formulario extends Component {
                     <div id="content">
                         <h1 className="subheader">Formulario</h1>
 
-                        {/* Mostrar Datos de Formulario */}
+                        {/* Mostrar Datos de Formulario Siempre y cuando este el dato User/Nombre */}
 
                         {
                             this.state.user.nombre &&
